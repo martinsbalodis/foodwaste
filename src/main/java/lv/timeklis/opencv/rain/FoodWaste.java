@@ -110,6 +110,16 @@ public class FoodWaste {
         double bg = Math.abs(b - g);
         double gr = Math.abs(g - r);
 
-        return br > 60 || bg > 60 || gr > 60;
+        // is colored
+        if(br > 40 || bg > 40 || gr > 40) {
+            return true;
+        }
+
+//         too dark
+        else if(r < 100 && g < 100 && b < 100) {
+            return true;
+        }
+
+        return false;
     }
 }
